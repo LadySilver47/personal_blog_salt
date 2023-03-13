@@ -1,0 +1,20 @@
+debug: true
+server:
+  port: 9001
+  error:
+    include-message: always
+spring:
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update # none, create ...
+  data:
+    mongodb:
+      uri: ${MONGI_URI}
+      database: ${MONGO_DB}
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure: ERROR
