@@ -1,29 +1,43 @@
+'use client';
+
 import Image from 'next/image'
-import { Key, ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 'react';
 import styles from './page.module.css'
+import { useEffect, useState } from 'react';
+import { BlogsPage, Content} from '@/(interfaces)/interfaces';
+import PageButtons from './(components)/PageButtons';
 
 
-const getBlogPosts = async() => {
-  const data = await fetch(`http://localhost:9001/api/blogs`);
-  const result = await data.json();
-  return result;
-}
+export default function Home({searchParams}: {searchParams?: {page?: string}}) {
+  const [blogContent, setBlogContent] = useState<Content[]>();
+  const [blogs, setBlogs] = useState<BlogsPage>();
 
-export default async function Home() {
+  const getBlogPosts = async() => {
+    let data;
+    searchParams?.page ? 
+      data = await fetch(`http://localhost:9001/api/blogs?page=${searchParams?.page}`)
+    :
+      data = await fetch(`http://localhost:9001/api/blogs`)
+    
+    const result = await data.json();
+    setBlogContent(result.content);
+    setBlogs(result);
+  }
 
-  const data = await getBlogPosts();
+  useEffect(() => {
+    getBlogPosts()
+  }, [searchParams])
 
   return (
    <section>
     <h1>Hello World</h1>
     <ul>
-      {data.map((element) => {
+      {blogContent?.map((element) => {
         return (
           <li key={element.id}>{element.title}</li>
-
-        );
+        )
       })}
     </ul>
+    <PageButtons searchParams = {searchParams} first ={blogs?.first} last = {blogs?.last}/>
    </section>
   )
 

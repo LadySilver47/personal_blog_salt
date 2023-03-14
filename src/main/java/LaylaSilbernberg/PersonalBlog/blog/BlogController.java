@@ -37,14 +37,17 @@ public class BlogController {
 
     }
 
-    @GetMapping
+    @GetMapping(produces = "application/json")
     public ResponseEntity<Page<Blog>> getBlogList(@RequestParam(required = false) Integer page){
 
         Pageable pagination = PageRequest
                 .of(page != null ? page : 0, 4, Sort
                         .by("date")
                         .descending());
-        return ResponseEntity.ok(service.getBlogs(pagination));
+        return ResponseEntity.ok()
+                .header("Access-Control-Allow-Origin", "*")
+                .header("Access-Control-Allow-Credentials", "true")
+                .body(service.getBlogs(pagination));
     }
 
 }
