@@ -33,4 +33,8 @@ public class BlogService {
 
         return repo.getBlogs(pagination);
     }
+
+    public Blog getBlogById(String id) {
+        return repo.getBlogById(id);
+    }
 }

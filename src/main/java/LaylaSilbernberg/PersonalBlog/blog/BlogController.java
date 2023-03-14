@@ -18,6 +18,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/blogs")
+@CrossOrigin
 public class BlogController {
 
     BlogService service;
@@ -26,7 +27,7 @@ public class BlogController {
         this.service = service;
     }
 
-    @PostMapping
+    @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity<Blog> createBlog(@RequestBody BlogDto blog, HttpServletRequest request) {
 
         Blog body = service.createBlog(blog);
@@ -45,9 +46,13 @@ public class BlogController {
                         .by("date")
                         .descending());
         return ResponseEntity.ok()
-                .header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Credentials", "true")
                 .body(service.getBlogs(pagination));
+    }
+
+    @GetMapping(path = "/{id}", produces = "application/json")
+    public ResponseEntity<Blog> getBlogById(@PathVariable String id){
+        return ResponseEntity.ok()
+                .body(service.getBlogById(id));
     }
 
 }

@@ -5,6 +5,7 @@ import styles from './page.module.css'
 import { useEffect, useState } from 'react';
 import { BlogsPage, Content} from '@/(interfaces)/interfaces';
 import PageButtons from './(components)/PageButtons';
+import BlogCard from './(components)/BlogCard';
 
 
 export default function Home({searchParams}: {searchParams?: {page?: string}}) {
@@ -29,11 +30,17 @@ export default function Home({searchParams}: {searchParams?: {page?: string}}) {
 
   return (
    <section>
-    <h1>Hello World</h1>
-    <ul>
+    <h2 className='home__header'>Hello World</h2>
+    <ul className='home__ul'>
       {blogContent?.map((element) => {
         return (
-          <li key={element.id}>{element.title}</li>
+          <BlogCard 
+          id={element.id}
+          title={element.title}
+          body={element.body}
+          date={element.date.toString()}
+          keywords={element.keywords}
+          key={element.id}/>
         )
       })}
     </ul>
