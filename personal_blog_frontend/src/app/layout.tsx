@@ -1,3 +1,4 @@
+import NavBar from './(components)/NavBar'
 import './globals.css'
 import Loading from './loading'
 
@@ -15,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header className='root__header'>
-          <h1>Blogs!</h1>
+          <NavBar />
         </header>
         <main className='root__main'>
         {children}

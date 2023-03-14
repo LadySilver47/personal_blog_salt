@@ -1,12 +1,11 @@
 'use client';
 
-import Image from 'next/image'
-import styles from './page.module.css'
+import './globals.css'
 import { useEffect, useState } from 'react';
 import { BlogsPage, Content} from '@/(interfaces)/interfaces';
 import PageButtons from './(components)/PageButtons';
 import BlogCard from './(components)/BlogCard';
-
+import HomeNav from './(components)/HomeNav';
 
 export default function Home({searchParams}: {searchParams?: {page?: string}}) {
   const [blogContent, setBlogContent] = useState<Content[]>();
@@ -30,7 +29,7 @@ export default function Home({searchParams}: {searchParams?: {page?: string}}) {
 
   return (
    <section>
-    <h2 className='home__header'>Hello World</h2>
+    <HomeNav blogs ={blogContent}/>
     <ul className='home__ul'>
       {blogContent?.map((element) => {
         return (
