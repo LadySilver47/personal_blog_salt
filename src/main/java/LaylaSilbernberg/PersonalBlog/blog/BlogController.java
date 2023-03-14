@@ -5,6 +5,10 @@ import LaylaSilbernberg.PersonalBlog.blog.model.documents.Blog;
 import LaylaSilbernberg.PersonalBlog.blog.model.dto.BlogDto;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,9 +38,13 @@ public class BlogController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Blog>> getBlogList(){
+    public ResponseEntity<Page<Blog>> getBlogList(@RequestParam(required = false) Integer page){
 
-        return ResponseEntity.ok(service.getBlogs());
+        Pageable pagination = PageRequest
+                .of(page != null ? page : 0, 4, Sort
+                        .by("date")
+                        .descending());
+        return ResponseEntity.ok(service.getBlogs(pagination));
     }
 
 }

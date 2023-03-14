@@ -1,32 +1,30 @@
 package LaylaSilbernberg.PersonalBlog.blog.model;
 
 
+import LaylaSilbernberg.PersonalBlog.blog.model.dao.MongoBlogRepository;
 import LaylaSilbernberg.PersonalBlog.blog.model.documents.Blog;
-import LaylaSilbernberg.PersonalBlog.blog.model.dto.BlogDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.http.ResponseEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public class BlogRepository {
 
-    MongoRepository mongoRepository;
+    MongoBlogRepository mongoRepository;
 
-    public BlogRepository(@Autowired MongoRepository mongoRepository) {
+    public BlogRepository(@Autowired MongoBlogRepository mongoRepository) {
         this.mongoRepository = mongoRepository;
     }
 
-    public Blog saveBlog(BlogDto blog) {
+    public Blog saveBlog(Blog blog) {
 
-        return (Blog) mongoRepository.save(new Blog(blog.title(), blog.body(), blog.date(), blog.keywords()));
+        return mongoRepository.save(blog);
 
     }
 
-    public List<Blog> getBlogs() {
+    public Page<Blog> getBlogs(Pageable pagination) {
 
-        return mongoRepository.findAll();
+        return mongoRepository.findAll(pagination);
     }
 }
