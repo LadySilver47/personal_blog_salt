@@ -18,6 +18,7 @@ should have pagination on the main page, return 4 blog posts max per page.
 Be able to edit blog posts. Should be able to add tags/ keywords to the blogposts. 
 Should be able to filter main page by keywords/tags. 
 Should be able to search by keywords.
+
 • Could: Have the ability to filter blog posts by date range. 
 Have a login function/admin area 
 (so only I can actually access the patch, post and delete functionalities). 
