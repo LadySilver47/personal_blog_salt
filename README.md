@@ -1,4 +1,4 @@
-# personal_blog_salt
+# Personal Blog Salt
 A work in process
 
 Had some divergence so I forced a push so now everything's a bit more blank than I'd like.
