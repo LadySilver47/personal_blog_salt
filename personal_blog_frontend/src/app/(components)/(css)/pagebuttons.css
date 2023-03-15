@@ -1,0 +1,19 @@
+.PageButtons__buttoncontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.PageButtons__previousPage, 
+.Pagebuttons__nextPage, 
+.PageButtons__previousPage--disabled, 
+.Pagebuttons__nextPage--disabled{
+    background-color: transparent;
+    border-color: cornflowerblue;
+    border-width: 0.1rem;
+    border-style: solid;
+    border-radius: 1rem;
+}
+
+.PageButtons__previousPage:hover, .Pagebuttons__nextPage:hover{
+    background-color: cornflowerblue;
+}

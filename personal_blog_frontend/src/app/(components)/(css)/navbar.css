@@ -1,0 +1,23 @@
+.Navbar__section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-style:solid;
+    border-width: 0.2rem;
+    border-color: cornflowerblue;
+    justify-content: space-around;
+}
+
+.navbar__nav{
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+}
+.Navbar__Link{
+    margin: 1rem;
+    text-decoration: none;
+}
+.Navbar__Link:hover{
+    color: darkorchid;
+}

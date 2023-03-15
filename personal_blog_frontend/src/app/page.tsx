@@ -29,7 +29,7 @@ export default function Home({searchParams}: {searchParams?: {page?: string}}) {
 
   return (
    <section>
-    <HomeNav blogs ={blogContent}/>
+    <HomeNav />
     <ul className='home__ul'>
       {blogContent?.map((element) => {
         return (
