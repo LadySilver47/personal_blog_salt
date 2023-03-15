@@ -1,8 +1,6 @@
 # Personal Blog Salt
 A work in process
 
-Had some divergence so I forced a push so now everything's a bit more blank than I'd like.
-
 This is my hackathon project for SALT. It's a personal blog. Here are the features I intend to implement in MOSCOW format:
 
 ```bash
