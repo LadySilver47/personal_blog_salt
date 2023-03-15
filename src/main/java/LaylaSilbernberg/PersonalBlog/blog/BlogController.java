@@ -55,10 +55,15 @@ public class BlogController {
                 .body(service.getBlogById(id));
     }
 
-    @DeleteMapping(consumes = "application/json", path = "/{id}")
+    @DeleteMapping(path = "/{id}")
     public ResponseEntity<Void> deleteBlogById(@PathVariable String id){
         service.deleteBlogById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping(path = "/all")
+    public ResponseEntity<List<Blog>> getAllBlogs(){
+        return ResponseEntity.ok(service.getAllBlogs());
     }
 
 }

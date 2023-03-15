@@ -41,4 +41,8 @@ public class BlogService {
     public void deleteBlogById(String id) {
         repo.deleteBlogById(id);
     }
+
+    public List<Blog> getAllBlogs() {
+        return repo.getAllBlogs();
+    }
 }

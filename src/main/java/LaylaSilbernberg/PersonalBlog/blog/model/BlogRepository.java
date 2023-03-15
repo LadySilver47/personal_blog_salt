@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @Repository
 public class BlogRepository {
 
@@ -36,5 +38,9 @@ public class BlogRepository {
 
     public void deleteBlogById(String id) {
         mongoRepository.deleteById(id);
+    }
+
+    public List<Blog> getAllBlogs() {
+        return mongoRepository.findAll();
     }
 }
