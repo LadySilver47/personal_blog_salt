@@ -37,4 +37,8 @@ public class BlogService {
     public Blog getBlogById(String id) {
         return repo.getBlogById(id);
     }
+
+    public void deleteBlogById(String id) {
+        repo.deleteBlogById(id);
+    }
 }

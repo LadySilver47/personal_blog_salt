@@ -14,9 +14,9 @@ export default function Home({searchParams}: {searchParams?: {page?: string}}) {
   const getBlogPosts = async() => {
     let data;
     searchParams?.page ? 
-      data = await fetch(`http://localhost:9001/api/blogs?page=${searchParams?.page}`)
+      data = await fetch(`http://localhost:9001/api/blogs?page=${searchParams?.page}`, { next: { revalidate: 60 } })
     :
-      data = await fetch(`http://localhost:9001/api/blogs`)
+      data = await fetch(`http://localhost:9001/api/blogs`, { next: { revalidate: 60 } })
     
     const result = await data.json();
     setBlogContent(result.content);

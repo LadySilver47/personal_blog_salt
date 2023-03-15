@@ -35,7 +35,6 @@ public class BlogController {
         return ResponseEntity
                 .created(URI.create(request.getRequestURI() + "/" + body.getId()))
                 .body(body);
-
     }
 
     @GetMapping(produces = "application/json")
@@ -45,6 +44,7 @@ public class BlogController {
                 .of(page != null ? page : 0, 4, Sort
                         .by("date")
                         .descending());
+
         return ResponseEntity.ok()
                 .body(service.getBlogs(pagination));
     }
@@ -53,6 +53,12 @@ public class BlogController {
     public ResponseEntity<Blog> getBlogById(@PathVariable String id){
         return ResponseEntity.ok()
                 .body(service.getBlogById(id));
+    }
+
+    @DeleteMapping(consumes = "application/json", path = "/{id}")
+    public ResponseEntity<Void> deleteBlogById(@PathVariable String id){
+        service.deleteBlogById(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
