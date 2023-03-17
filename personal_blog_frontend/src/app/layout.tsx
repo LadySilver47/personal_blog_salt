@@ -1,5 +1,5 @@
 import NavBar from './(components)/NavBar'
-import './globals.css'
+import '@/(css)/globals.css'
 import Loading from './loading'
 
 export const metadata = {
@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className='layout__body'>
         <header className='root__header'>
           <NavBar />
         </header>

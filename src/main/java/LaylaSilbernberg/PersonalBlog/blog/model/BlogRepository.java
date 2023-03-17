@@ -33,7 +33,7 @@ public class BlogRepository {
     }
 
     public Blog getBlogById(String id) {
-        return mongoRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Blog not found"));
+        return mongoRepository.findById(id).orElse(null);
     }
 
     public void deleteBlogById(String id) {

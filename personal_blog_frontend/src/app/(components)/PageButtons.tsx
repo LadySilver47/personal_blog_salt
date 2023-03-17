@@ -2,7 +2,7 @@
 
 import { PageButtonProps } from '@/(props)/props';
 import { usePathname, useRouter } from 'next/navigation';
-import  './(css)/pagebuttons.css'
+import  '@/(css)/pagebuttons.css'
 
 const PageButtons = (props: PageButtonProps) => {
     const {first, last, searchParams} = props;
@@ -29,22 +29,22 @@ return (
     <button 
         className="PageButtons__previousPage--disabled"
         disabled>
-            Previous</button>
+            &#60; Previous</button>
             <button 
     className='Pagebuttons__nextPage'
     onClick={forward}>
-        Next
+        Next &#62;
         </button>
         </>)}
     {last && (    <>
     <button 
         className="PageButtons__previousPage"
         onClick={backward}>
-            Previous</button>
+            &#60; Previous</button>
             <button 
     className='Pagebuttons__nextPage--disabled'
     disabled>
-        Next
+        Next &#62;
         </button>
         </>)}
     {(!first && !last) && (
@@ -52,11 +52,11 @@ return (
     <button 
         className="PageButtons__previousPage"
         onClick={backward}>
-            Previous</button>
+            &#60; Previous</button>
             <button 
     className='Pagebuttons__nextPage'
     onClick={forward}>
-        Next
+        Next &#62;
         </button>
         </>
 )}

@@ -1,7 +1,7 @@
 import { BlogProps } from '@/(props)/props'
 import Link from 'next/link'
 import React from 'react'
-import  './(css)/blogcard.css'
+import '@/(css)/blogcard.css'
 
 
 const BlogCard = ({title, body, keywords, date, id}: BlogProps) => {

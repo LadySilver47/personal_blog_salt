@@ -2,7 +2,7 @@ import { Content } from '@/(interfaces)/interfaces';
 import { notFound } from 'next/navigation';
 import React from 'react'
 import Delete from './(components)/Delete';
-import './(css)/id.css'
+import '@/(css)/id.css'
 
 async function getBlog(blogId: string) {
     const res = await fetch(

@@ -1,12 +1,12 @@
 'use client';
 
-import { AddPostForm } from './(components)/AddPostForm';
+import { AddPostForm } from '../(components)/AddPostForm';
 
 export default function Blogs() {
 
   return (
-   <section>
-    <h2>Add a blog post!</h2>
+   <section className='postblog__section'>
+    <h2 className='postblog__header'>Add a blog post!</h2>
     <AddPostForm/>
    </section>
   )

@@ -1,6 +1,6 @@
 'use client';
 
-import './globals.css'
+import '@/(css)/globals.css'
 import { useEffect, useState } from 'react';
 import { BlogsPage, Content} from '@/(interfaces)/interfaces';
 import PageButtons from './(components)/PageButtons';
