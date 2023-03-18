@@ -1,3 +1,5 @@
+import { RefObject } from "react";
+
 export interface PageButtonProps{
     first?: boolean;
     last?: boolean;
@@ -17,4 +19,16 @@ export interface FormProps{
     title?: string;
     body?: string;
     keywords?: string[];
+}
+
+export interface BlogFormProps{
+    titleRef?: RefObject<HTMLInputElement>;
+    bodyRef?: RefObject<HTMLTextAreaElement>;
+    tagsRef?: RefObject<HTMLInputElement>;
+    id?: string;
+    title?: string;
+    body?: string;
+    keywords?: string[];
+    changeForm: (event: React.ChangeEvent) => void;
+    addBlogPost: (event: React.FormEvent) => Promise<void>;
 }

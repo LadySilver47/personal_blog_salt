@@ -5,10 +5,8 @@ import { AddPostForm } from '@/app/(components)/AddPostForm'
 import { useEffect, useState } from 'react'
 
 const page = ({ params}: {params: { id: string }}) => {
-    const [data, setData] = useState<Content>();
-
-    console.log(params.id)
-
+  const [data, setData] = useState<Content>();
+  
   const getBlog = async() => {
     const url = `http://localhost:9001/api/blogs/${params.id}`
     const result = await fetch(url)
