@@ -32,7 +32,7 @@ public class BlogController {
     public ResponseEntity<Blog> createBlog(@RequestBody BlogDto blog, HttpServletRequest request) {
         Blog body;
 
-        if (blog.id() != null || !blog.id().isBlank()){
+        if (blog.id() != null){
             body = service.updateBlog(blog);
             return ResponseEntity.accepted().body(body);
         }
