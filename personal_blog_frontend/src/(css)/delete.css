@@ -1,0 +1,15 @@
+.Blog__delete-button{
+    background-color: #ff8ac1;
+    border-radius: 0.3rem;
+    border-style: none;
+    font-size: 1rem;
+    margin-left: 0.1rem;
+    color: #e2e2e2;
+    font-size: large;
+    width: 10rem;
+    height: 2rem
+}
+
+.Blog__delete-button:hover{
+    background-color: #340f17;;
+}

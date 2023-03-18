@@ -12,11 +12,8 @@ export default function Home({searchParams}: {searchParams?: {page?: string}}) {
   const [blogs, setBlogs] = useState<BlogsPage>();
 
   const getBlogPosts = async() => {
-    let data;
-    searchParams?.page ? 
-      data = await fetch(`http://localhost:9001/api/blogs?page=${searchParams?.page}`, { next: { revalidate: 60 } })
-    :
-      data = await fetch(`http://localhost:9001/api/blogs`, { next: { revalidate: 60 } })
+    const url = `http://localhost:9001/api/blogs${searchParams?.page ? `?page=${searchParams.page}` : ''}`;
+    const data = await fetch(url, { next: { revalidate: 60 } })
     
     const result = await data.json();
     setBlogContent(result.content);

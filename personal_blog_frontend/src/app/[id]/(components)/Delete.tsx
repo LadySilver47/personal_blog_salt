@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { usePathname, useRouter } from 'next/navigation';
+import '@/(css)/delete.css'
 
 interface deleteIdProp{
     id: string;

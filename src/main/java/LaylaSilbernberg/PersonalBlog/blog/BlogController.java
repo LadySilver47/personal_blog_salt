@@ -16,7 +16,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/blogs")
@@ -46,7 +45,7 @@ public class BlogController {
         Pageable pagination = PageRequest
                 .of(page != null ? page : 0, 4, Sort
                         .by("date")
-                        .descending());
+                        .descending().and(Sort.by("id")));
 
         Page<Blog> blogPage = service.getBlogs(pagination);
 
@@ -55,7 +54,7 @@ public class BlogController {
         }
 
         return ResponseEntity.ok()
-                .body(service.getBlogs(blog));
+                .body(service.getBlogs(pagination));
     }
 
     @GetMapping(path = "/{id}", produces = "application/json")

@@ -1,0 +1,25 @@
+.nav__h2{
+    color: #ff8ac1;
+    
+}
+.HomeNav__search{
+    border: 0.1rem solid #ff8ac1;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    background-color: #f8f8f8;
+}
+
+.HomeNav__section{
+    padding: 1rem;
+}
+.Homenav__button{
+    background-color: #ff8ac1;
+    border-radius: 0.3rem;
+    border-style: none;
+    font-size: 1rem;
+    margin-left: 0.1rem;
+    color: #e2e2e2;
+}
+.Homenav__button:hover{
+    color: #7d7576;
+}

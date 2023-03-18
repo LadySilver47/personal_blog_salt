@@ -10,56 +10,28 @@ const PageButtons = (props: PageButtonProps) => {
     const router = useRouter();
 
       const forward = () => {
-        searchParams?.page ? router
-        .push(pathname + "?page=" + (parseInt(searchParams.page)+1).toString())
-        :
-        router
-        .push(pathname + "?page=" + 1)
-      }
+        router.push(`${pathname}?page=${parseInt(searchParams?.page || '1') + 1}`);
+      };
 
       const backward = () => {
-        router
-        .push(pathname + "?page=" + (parseInt(searchParams!.page as string)-1).toString())
-      }
+        router.push(`${pathname}?page=${parseInt(searchParams?.page || '1') - 1}`);
+      };
 
 
 return (
-<div className="PageButtons__buttoncontainer">
-    {first && (    <>
-    <button 
-        className="PageButtons__previousPage--disabled"
-        disabled>
-            &#60; Previous</button>
-            <button 
-    className='Pagebuttons__nextPage'
-    onClick={forward}>
-        Next &#62;
-        </button>
-        </>)}
-    {last && (    <>
+<div className="PageButtons__buttoncontainer"><>
     <button 
         className="PageButtons__previousPage"
-        onClick={backward}>
-            &#60; Previous</button>
-            <button 
-    className='Pagebuttons__nextPage--disabled'
-    disabled>
-        Next &#62;
-        </button>
-        </>)}
-    {(!first && !last) && (
-    <>
-    <button 
-        className="PageButtons__previousPage"
+        disabled={first}
         onClick={backward}>
             &#60; Previous</button>
             <button 
     className='Pagebuttons__nextPage'
+    disabled={last}
     onClick={forward}>
         Next &#62;
         </button>
         </>
-)}
 </div>
 )
 }

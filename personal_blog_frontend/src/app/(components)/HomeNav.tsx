@@ -3,6 +3,7 @@
 import React from 'react'
 import { useRouter } from 'next/navigation';
 import { Content } from '@/(interfaces)/interfaces';
+import '@/(css)/homenav.css'
 
 const HomeNav = () => {
 const [searchId, setSearchId] = React.useState<string>()
@@ -34,9 +35,9 @@ router.push(`/${find}`);
 
   return (
     <section className='HomeNav__section'>
-      <h2>Home Page</h2>
+      <h2 className='nav__h2'>Home Page</h2>
       <form onSubmit={handleSubmit} 
-      className='HomeNav__search'>
+      className='HomeNav__form'>
         <input
         className='HomeNav__search'
         onChange={handleChange}
@@ -44,7 +45,7 @@ router.push(`/${find}`);
         type="text" 
         placeholder='search'
         />
-        <button type='submit'>Search</button>
+        <button className='Homenav__button' type='submit'>Search</button>
         </form>
     </section>
   )

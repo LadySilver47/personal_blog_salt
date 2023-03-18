@@ -28,7 +28,6 @@ const BlogCard = ({title, body, keywords, date, id}: BlogProps) => {
               value={keywords}/>
                         </div>
     </article>
-
     </Link>
   )
 }
