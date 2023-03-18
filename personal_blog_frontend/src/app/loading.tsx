@@ -4,10 +4,12 @@ export default function Loading() {
 
 
     return (
-
-        <div class="loadingio-spinner-gear-segqsufwkg"><div class="ldio-eljbu4h012">
+        <div className='loading__container'>
+                    <div className="loadingio-spinner-gear-segqsufwkg"><div className="ldio-eljbu4h012">
         <div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         </div></div>
+        </div>
+
 
 
     )

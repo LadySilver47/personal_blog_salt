@@ -1,5 +1,4 @@
 import { BlogFormProps } from '@/(props)/props'
-import React from 'react'
 
 const BlogForm = ({titleRef, bodyRef, tagsRef, title, body, keywords, changeForm, addBlogPost}: BlogFormProps) => {
   return (

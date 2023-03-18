@@ -1,37 +1,39 @@
-# Personal Blog Salt
-A work in process
+#Personal Blog Salt
 
-This is my hackathon project for SALT. It's a personal blog. Here are the features I intend to implement in MOSCOW format:
+This is a work-in-progress personal blog project for <SALT>, 
+built using Java, Typescript, Spring, Next.js, MongoDB, CSS, and HTML. 
+Here's an overview of the features I plan to implement in MOSCOW format:
 
-```bash
-• MUST: Have the ability to add blog posts to a database, 
-search blog posts by id, 
-blog posts must be sorted on the main page by date, in cards, 
-clicking on a card must take you to the individual blog page. 
-Must have About page (HTML only).
 
-• Should: Have the ability to search for blog posts by title, 
-should have the ability to delete blog posts by id, 
-should have pagination on the main page, return 4 blog posts max per page. 
-Be able to edit blog posts. Should be able to add tags/ keywords to the blogposts. 
-Should be able to filter main page by keywords/tags. 
-Should be able to search by keywords.
+##MOSCOW
 
-• Could: Have the ability to filter blog posts by date range. 
-Have a login function/admin area 
-(so only I can actually access the patch, post and delete functionalities). 
-Have the blog posts have a cool expand transformation.
+###MUST-HAVE Features
 
-• Won’t: be able to replace blog posts
-```
+    - Add blog posts to a database
+    - Search for blog posts by ID
+    - Display blog posts on the main page, sorted by date and in cards
+    - Click on a card to view an individual blog post
+    - Include an "About" page (HTML only)
 
-My Tech Stack (how to overengineer a side project dot jpg)
-```bash
-Java
-Typescript
-Spring
-Next.js
-MongoDB
-CSS
-HTML
-```
+###SHOULD-HAVE Features
+
+    - Search for blog posts by title
+    - Delete blog posts by ID
+    - Implement pagination on the main page, showing a maximum of four blog posts per page
+    - Edit blog posts
+    - Add tags/keywords to blog posts
+    - Filter main page by keywords/tags
+    - Search for blog posts by keywords
+
+###COULD-HAVE Features
+
+    - Filter blog posts by date range
+    - Implement a login function/admin area to restrict access to the patch, post, and delete functionalities
+    - Add a cool expand transformation to blog posts
+
+###WON'T-HAVE Features
+
+    - Replace blog posts
+
+This project is currently a work in progress, so some features may not be implemented yet. 
+I'll continue to update this README as I make progress.
