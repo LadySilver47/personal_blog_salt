@@ -1,6 +1,6 @@
 # Personal Blog Salt
 
-This is a work-in-progress personal blog project for <SALT>, 
+This is a work-in-progress personal blog project for SALT, 
 built using Java, Typescript, Spring, Next.js, MongoDB, CSS, and HTML. 
 Here's an overview of the features I plan to implement in MOSCOW format:
 
