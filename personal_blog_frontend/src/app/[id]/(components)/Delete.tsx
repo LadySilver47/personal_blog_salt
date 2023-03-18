@@ -4,7 +4,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import '@/(css)/delete.css'
 
 interface deleteIdProp{
-    id: string;
+    id?: string;
 }
 
 const Delete = ({id}: deleteIdProp) => {
@@ -23,9 +23,7 @@ const Delete = ({id}: deleteIdProp) => {
     }
 
   return (
-    <div className="Blog__delete-container">
         <button onClick={deleteById} className='Blog__delete-button'>Delete</button>
-    </div>
   )
 }
 

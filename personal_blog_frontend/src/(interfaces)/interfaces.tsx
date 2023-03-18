@@ -36,6 +36,7 @@ export interface Sort {
 }
 
 export interface BlogPost{
+    id?: string;
     title: string;
     body: string;
     keywords?:string[];

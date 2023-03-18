@@ -1,34 +1,35 @@
+'use client'
+
 import { Content } from '@/(interfaces)/interfaces';
-import { notFound } from 'next/navigation';
-import React from 'react'
+import { useRouter, notFound } from 'next/navigation';
+import React, { useEffect, useState } from 'react'
 import Delete from './(components)/Delete';
 import '@/(css)/id.css'
 
-async function getBlog(blogId: string) {
-    const res = await fetch(
-      `http://localhost:9001/api/blogs/${blogId}`,
-      {
-        next: { revalidate: 60 },
-      }
-    );
-    if(!res.ok){ return undefined;
-    }
-    return res.json();
+
+const Blog = ({params}: {params: { id: string }}) => {
+  const [data, setData] = useState<Content>();
+
+  const getBlog = async() => {
+    const url = `http://localhost:9001/api/blogs/${params.id}`
+    const result = await fetch(url)
+    const data = await result.json();
+    setData(data);
   }
 
-const Blog = async({ params}: {params: { id: string }}) => {
+  useEffect(() => {
+      getBlog()
+      .catch(console.error);
+    }, [])
 
-    const data: Content = await getBlog(params.id);
-
-    !data && notFound();
-
+  const router = useRouter();
 
   return (<section 
     className='Blog__blog-section'>
-        <h2 className='blog__title'>{data.title}</h2>
+        <h2 className='blog__title'>{data?.title}</h2>
         <article className='blog__body'>
           <pre className='blog__text'>
-          {data.body}
+          {data?.body}
           </pre>
         </article>
         <div className="input__container">
@@ -40,10 +41,17 @@ const Blog = async({ params}: {params: { id: string }}) => {
         <input
         readOnly
         type="text" 
-        value={data.keywords}
+        value={data?.keywords}
         className='blog__keywords'/>
         </div>
-        <Delete id={data.id}/>
+        <div className="Blog__button-container">
+        <button 
+        onClick={() => router.push("/" + params.id + "/edit")}
+        className="Blog__edit-button">
+          Edit
+        </button>
+        <Delete id={data?.id}/>
+        </div>
     </section>
   )
 

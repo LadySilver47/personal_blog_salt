@@ -30,9 +30,14 @@ public class BlogController {
 
     @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity<Blog> createBlog(@RequestBody BlogDto blog, HttpServletRequest request) {
+        Blog body;
 
-        Blog body = service.createBlog(blog);
+        if (blog.id() != null || !blog.id().isBlank()){
+            body = service.updateBlog(blog);
+            return ResponseEntity.accepted().body(body);
+        }
 
+        body = service.createBlog(blog);
         return ResponseEntity
                 .created(URI.create(request.getRequestURI() + "/" + body.getId()))
                 .body(body);

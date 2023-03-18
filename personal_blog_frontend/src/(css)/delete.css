@@ -6,10 +6,10 @@
     margin-left: 0.1rem;
     color: #e2e2e2;
     font-size: large;
-    width: 10rem;
+    width: 10em;
     height: 2rem
 }
 
 .Blog__delete-button:hover{
-    background-color: #340f17;;
+    background-color: #531516
 }

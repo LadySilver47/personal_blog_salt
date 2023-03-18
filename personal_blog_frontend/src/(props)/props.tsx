@@ -5,9 +5,9 @@ export interface PageButtonProps{
 }
 
 export interface BlogProps{
-    id: string;
-    title: string;
-    body: string;
+    id?: string;
+    title?: string;
+    body?: string;
     keywords?: string[];
-    date: string;
+    date?: string;
 }

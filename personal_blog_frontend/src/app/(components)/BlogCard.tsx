@@ -13,12 +13,12 @@ const BlogCard = ({title, body, keywords, date, id}: BlogProps) => {
           <article 
           className='BlogCard__BlogBody'
           >
-            {body.length > 40 ? body.substring(0, 40) + "..." : body}
+            {body!.length > 40 ? body!.substring(0, 40) + "..." : body}
           </article>
           <div className='blogcard__input-container'>
           <input
               className='BlogCard__date'
-              value={date.toString()}
+              value={date!.toString()}
               readOnly
               type="text" />
          <input

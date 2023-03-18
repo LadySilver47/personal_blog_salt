@@ -45,4 +45,12 @@ public class BlogService {
     public List<Blog> getAllBlogs() {
         return repo.getAllBlogs();
     }
+
+    public Blog updateBlog(BlogDto blog) {
+        Blog updatedBlog = repo.getBlogById(blog.id());
+        updatedBlog.setBody(blog.body());
+        updatedBlog.setKeywords(blog.keywords());
+        updatedBlog.setDate(LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE));
+        return repo.saveBlog(updatedBlog);
+    }
 }
