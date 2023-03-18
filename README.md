@@ -1,13 +1,13 @@
-#Personal Blog Salt
+# Personal Blog Salt
 
 This is a work-in-progress personal blog project for <SALT>, 
 built using Java, Typescript, Spring, Next.js, MongoDB, CSS, and HTML. 
 Here's an overview of the features I plan to implement in MOSCOW format:
 
 
-##MOSCOW
+## MOSCOW
 
-###MUST-HAVE Features
+### MUST-HAVE Features
 
     - Add blog posts to a database
     - Search for blog posts by ID
@@ -15,7 +15,7 @@ Here's an overview of the features I plan to implement in MOSCOW format:
     - Click on a card to view an individual blog post
     - Include an "About" page (HTML only)
 
-###SHOULD-HAVE Features
+### SHOULD-HAVE Features
 
     - Search for blog posts by title
     - Delete blog posts by ID
@@ -25,13 +25,13 @@ Here's an overview of the features I plan to implement in MOSCOW format:
     - Filter main page by keywords/tags
     - Search for blog posts by keywords
 
-###COULD-HAVE Features
+### COULD-HAVE Features
 
     - Filter blog posts by date range
     - Implement a login function/admin area to restrict access to the patch, post, and delete functionalities
     - Add a cool expand transformation to blog posts
 
-###WON'T-HAVE Features
+### WON'T-HAVE Features
 
     - Replace blog posts
 
