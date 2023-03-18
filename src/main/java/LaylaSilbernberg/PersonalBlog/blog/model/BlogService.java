@@ -46,8 +46,9 @@ public class BlogService {
         return repo.getAllBlogs();
     }
 
-    public Blog updateBlog(BlogDto blog) {
-        Blog updatedBlog = repo.getBlogById(blog.id());
+    public Blog updateBlog(String id, BlogDto blog) {
+        Blog updatedBlog = repo.getBlogById(id);
+        updatedBlog.setTitle(blog.title());
         updatedBlog.setBody(blog.body());
         updatedBlog.setKeywords(blog.keywords());
         updatedBlog.setDate(LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE));

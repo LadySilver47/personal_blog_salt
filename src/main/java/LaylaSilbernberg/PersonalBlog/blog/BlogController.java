@@ -30,17 +30,17 @@ public class BlogController {
 
     @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity<Blog> createBlog(@RequestBody BlogDto blog, HttpServletRequest request) {
-        Blog body;
 
-        if (blog.id() != null){
-            body = service.updateBlog(blog);
-            return ResponseEntity.accepted().body(body);
-        }
-
-        body = service.createBlog(blog);
+        Blog body = service.createBlog(blog);
         return ResponseEntity
                 .created(URI.create(request.getRequestURI() + "/" + body.getId()))
                 .body(body);
+    }
+
+    @PatchMapping(path = "{id}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<Blog> updateBlog(@PathVariable String id, @RequestBody BlogDto blog){
+
+        return ResponseEntity.accepted().body(service.updateBlog(id, blog));
     }
 
     @GetMapping(produces = "application/json")
