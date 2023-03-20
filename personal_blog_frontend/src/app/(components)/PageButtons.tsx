@@ -19,7 +19,8 @@ const PageButtons = (props: PageButtonProps) => {
 
 
 return (
-<div className="PageButtons__buttoncontainer"><>
+<div className="PageButtons__buttoncontainer">
+  <>
     <button 
         className="PageButtons__previousPage"
         disabled={first}

@@ -12,7 +12,6 @@ const BlogForm = ({titleRef, bodyRef, tagsRef, title, body, keywords, changeForm
         <input 
         ref={titleRef}
         placeholder="title" 
-        name="title" 
         className="form__input" 
         type="text"
         onChange={changeForm} 
@@ -25,7 +24,6 @@ const BlogForm = ({titleRef, bodyRef, tagsRef, title, body, keywords, changeForm
         className='form__textarea'
         ref={bodyRef}
         placeholder="What's your story?"
-        name="body"
         rows={25}
         required
         onChange={changeForm}
@@ -39,7 +37,6 @@ const BlogForm = ({titleRef, bodyRef, tagsRef, title, body, keywords, changeForm
         className='AddPostForm__keywords'
         placeholder="Add tags (comma seperated)" 
         type="text" 
-        name="tags"
         onChange={changeForm}
         defaultValue={keywords}/>
         <div className="form-button__container">
